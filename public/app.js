@@ -11,7 +11,7 @@ const mathsInput = document.getElementById("maths");
 const cheInput = document.getElementById("che");
 const phyInput = document.getElementById("phy");
 
-// LOAD STUDENTS
+//load to table
 function loadStudents() {
   fetch(API_URL)
     .then(res => res.json())
@@ -40,7 +40,7 @@ function loadStudents() {
 }
 
 
-// CREATE / UPDATE STUDENT
+//add/update
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -81,7 +81,7 @@ form.addEventListener("submit", (e) => {
 });
 
 
-// EDIT STUDENT
+//edit
 function editStudent(id) {
   fetch(API_URL)
     .then(res => res.json())
@@ -103,12 +103,10 @@ function editStudent(id) {
 }
 
 
-// DELETE STUDENT
+//delete
 function deleteStudent(id) {
   fetch(`${API_URL}/${id}`, { method: "DELETE" })
     .then(() => loadStudents());
 }
 
-
-// INITIAL LOAD
 loadStudents();

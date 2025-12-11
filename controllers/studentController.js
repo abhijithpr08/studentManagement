@@ -1,12 +1,12 @@
-import Student from "../models/Student";
+import Student from "../models/Student.js";
 
 //create
 export const createStudent = async (req,res) => {
     try{
-        const student = await Student.createStudent(req.body)
+        const student = await Student.create(req.body)
         res.json(student)
     } 
-    catch{
+    catch(error){
         res.status(400).json({error: error.message})
     }
 }
@@ -27,7 +27,7 @@ export const updateStudent = async (req,res)=>{
         )
         res.json(updated)
     }
-    catch{
+    catch(error){
         res.status(400).json({error:error.message})
     }
 }
