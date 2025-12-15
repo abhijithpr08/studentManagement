@@ -22,7 +22,8 @@ const phyInput = document.getElementById("phy");
 function loadStudents() {
   fetch(API_URL)
     .then(res => res.json())
-    .then(data => {
+  .then(data => {
+    console.log(data);
       tableBody.innerHTML = "";
 
       data.forEach((s) => {
