@@ -3,10 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
-import { fileURLToPath } from "url";
-import path from "path";
 import pageRoutes from "./routes/pageRoutes.js"
-
 
 dotenv.config();
 connectDB();
